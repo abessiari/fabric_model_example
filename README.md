@@ -8,7 +8,7 @@
      - Need to implement plugin
   - May actually solve the dependency problem 
   
-# Node using classic language. 
+# Node In A Prgramming language Like Java. 
 
 ```
 class Resource {
@@ -25,7 +25,7 @@ my_node.nic_model = "NIC_Basic"
 
 ```
 
-# Node in yaml
+# Node in YAML
 
 ```
 reource:
@@ -42,6 +42,6 @@ reource:
 ```
 resource "node" "my_node" {
    image       = "centos"
-    nic_model. =  "Nic_Basic"
+   nic_model   =  "Nic_Basic"
 }
 ```

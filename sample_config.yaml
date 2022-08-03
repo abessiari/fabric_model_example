@@ -6,13 +6,13 @@ provider:
   - my_chi_provider:
     -  project_id: "456"
     
+resource:
 slice:
 - my_fabric_slice:
   - provider: '{{ provider.fabric.my_fabric_provider }}'
 - my_chi_slice:
   - provider: '{{ provider.chi.my_chi_provider }}'
   
-resource:
 - subnet:
   - my_subnet:
     - start: 192.168.100.100

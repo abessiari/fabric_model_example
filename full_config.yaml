@@ -1,0 +1,42 @@
+provider:
+- fabric:
+  - my_fabric_provider:
+    - project_id: "123"
+- chi:
+  - my_chi_provider:
+    -  project_id: "456"
+    
+slice:
+- my_fabric_slice:
+  - provider: '{{ provider.fabric.my_fabric_provider }}'
+- my_chi_slice:
+  - provider: '{{ provider.chi.my_chi_provider }}'
+  
+resource:
+- subnet:
+  - my_subnet:
+  - start: 192.168.100.100
+  - end: 192.168.100.150
+  - mask: 24
+  
+- network:
+  - my_chi_network:
+    - type: CC-CentOS8
+    - subnet: '{{ subnet.my_subnet }}'
+    
+- network:
+  - my_fabric_network:
+    - subnet: '{{ subnet.my_subnet }}'
+    - type: IPv4
+    - vlan = '{{ network.my_chi_network.vlan }}'
+
+- node:
+  - my_fabric_node:
+    - slice: '{{ slice._my_fabric_slice }}'
+    - network:  '{{ network.my_fabric_network }}'
+    - image: default_rocky_8
+    
+  - my_chi_node:
+    - slice: '{{ slice._my_chi_slice }}'
+    - network:  '{{ network.my_chi_network }}'
+    - image: CC-CentOS8

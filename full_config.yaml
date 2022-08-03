@@ -15,9 +15,9 @@ slice:
 resource:
 - subnet:
   - my_subnet:
-  - start: 192.168.100.100
-  - end: 192.168.100.150
-  - mask: 24
+    - start: 192.168.100.100
+    - end: 192.168.100.150
+    - mask: 24
   
 - network:
   - my_chi_network:

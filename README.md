@@ -27,6 +27,7 @@ my_node.nic_model = "NIC_Basic"
 
 # Node in yaml
 
+```
 reource:
    - node: 
      - my_node:
@@ -34,10 +35,13 @@ reource:
        - nic_model: "Nic_Basic"
     
 // Now we can refer to it as {{ node.my_node }}
+```
 
 # Node in HCL
 
+```
 resource "node" "my_node" {
    image       = "centos"
     nic_model. =  "Nic_Basic"
 }
+```

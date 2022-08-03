@@ -10,6 +10,7 @@
   
 # Node using classic language. 
 
+```
 class Resource {
 }
 
@@ -21,6 +22,8 @@ class Node extends Resource {
 my_node = new Node()
 my_node.image = "centos"
 my_node.nic_model = "NIC_Basic"
+
+```
 
 # Node in yaml
 

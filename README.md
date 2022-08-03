@@ -30,11 +30,12 @@ my_node.nic_model = "NIC_Basic"
 ```
 reource:
    - node: 
-     - my_node:
+     - my_node:                       // Note the variable name here.
        - image: "centos"
        - nic_model: "Nic_Basic"
     
-// Now we can refer to it as {{ node.my_node }}
+// Now another resource can refer to it as '{{ node.my_node }}' and in doing so we can deduce that this  resource
+depends on node with name "my_node"
 ```
 
 # Node in HCL
